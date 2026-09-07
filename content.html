@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>心理解读 · 落叶心理解剖室</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #0f1115; color: #e8e8ea;
+    min-height: 100vh; padding: 40px 20px; line-height: 1.8;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  .back { color: #7c9ef0; text-decoration: none; font-size: 14px; }
+  h1 { font-size: 24px; margin: 20px 0 6px; }
+  .sub { color: #9a9aa3; font-size: 14px; margin-bottom: 32px; }
+  .video {
+    background: #1a1d24; border: 1px solid #2a2d35; border-radius: 16px;
+    padding: 22px 20px; margin-bottom: 16px;
+  }
+  .video h2 { font-size: 17px; margin-bottom: 8px; }
+  .video p { font-size: 14px; color: #9a9aa3; }
+  .video .tag {
+    display: inline-block; font-size: 12px; color: #7c6cf0;
+    border: 1px solid #7c6cf0; border-radius: 20px;
+    padding: 1px 10px; margin-bottom: 10px;
+  }
+  .cta {
+    display: block; text-align: center; margin-top: 32px;
+    background: linear-gradient(135deg, #7c6cf0, #4ea8de);
+    color: #fff; text-decoration: none; font-size: 16px; font-weight: 600;
+    border-radius: 14px; padding: 14px;
+  }
+  .cta:hover { opacity: .9; }
+  footer { margin-top: 40px; text-align: center; font-size: 12px; color: #55565e; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 返回主页</a>
+  <h1>🧠 心理解读</h1>
+  <p class="sub">把复杂的心理学，翻译成人话。每周更新。</p>
+
+  <!-- ⚠️ 内容维护说明：以后发新视频，只需要改下面这个数组（标题/钩子/标签），其他都不用动 -->
+  <div id="video-list"></div>
+
+  <a class="cta" id="douyin-link" href="#" target="_blank" rel="noopener">去抖音看完整版 →</a>
+  <footer>落叶心理解剖室 · 用 AI 把想法变成产品</footer>
+</div>
+<script>
+  // ==== 数据区：把这三个占位换成你的真实视频（标题 / 一句话钩子 / 分类标签）====
+  const videos = [
+    { title: "【占位】视频标题 1 —— 换成你的真实标题", hook: "一句话钩子：为什么你总在深夜 emo？", tag: "焦虑内耗" },
+    { title: "【占位】视频标题 2 —— 换成你的真实标题", hook: "一句话钩子：原生家庭欠你的，你可以自己补上", tag: "原生家庭" },
+    { title: "【占位】视频标题 3 —— 换成你的真实标题", hook: "一句话钩子：情绪不是敌人，是没拆的信", tag: "情绪自救" },
+  ];
+  // ==== 你的抖音主页链接（登录抖音 → 我的主页 → 分享 → 复制链接）====
+  const douyinHome = "#"; // ← 换成真实链接
+
+  const list = document.getElementById('video-list');
+  list.innerHTML = videos.map(v =>
+    `<div class="video"><span class="tag">${v.tag}</span><h2>${v.title}</h2><p>${v.hook}</p></div>`
+  ).join('');
+  if (douyinHome !== "#") document.getElementById('douyin-link').href = douyinHome;
+</script>
+</body>
+</html>

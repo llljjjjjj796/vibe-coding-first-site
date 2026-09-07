@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>李冠华 · 心理学译者</title>
+<title>落叶心理解剖室</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -14,10 +14,8 @@
     padding: 24px; line-height: 1.8;
   }
   .avatar {
-    width: 88px; height: 88px; border-radius: 50%;
-    background: linear-gradient(135deg, #7c6cf0, #4ea8de);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 40px; margin-bottom: 24px;
+    width: 85px; height: 85px; border-radius: 50%;
+    object-fit: cover; margin-bottom: 24px;
   }
   h1 { font-size: 28px; margin-bottom: 8px; }
   .tagline { color: #9a9aa3; font-size: 16px; margin-bottom: 40px; }
@@ -26,8 +24,14 @@
     background: #1a1d24; border: 1px solid #2a2d35; border-radius: 16px;
     padding: 24px 20px; width: 210px; text-align: left;
     transition: transform .2s, border-color .2s;
+    text-decoration: none; color: inherit; position: relative; display: block;
   }
   .card:hover { transform: translateY(-4px); border-color: #7c6cf0; }
+  .card .arrow {
+    position: absolute; top: 18px; right: 16px;
+    color: #55565e; font-size: 14px; transition: color .2s, transform .2s;
+  }
+  .card:hover .arrow { color: #7c6cf0; transform: translateX(3px); }
   .card h2 { font-size: 16px; margin-bottom: 8px; }
   .card p { font-size: 13px; color: #9a9aa3; }
   footer { margin-top: 48px; font-size: 13px; color: #55565e; }
@@ -35,13 +39,13 @@
 </style>
 </head>
 <body>
-  <div class="avatar">🌱</div>
-  <h1>你好，我是李冠华</h1>
+  <img class="avatar" src="avatar.jpg" alt="落叶心理解剖室头像">
+  <h1>落叶心理解剖室</h1>
   <p class="tagline">正在学 vibe coding 的心理学自媒体人 · 用 AI 把想法变成产品</p>
   <div class="cards">
-    <div class="card"><h2>🧠 心理解读</h2><p>面向年轻人的原生家庭 / 焦虑内耗 / 情绪自救内容</p></div>
-    <div class="card"><h2>🛠 自制工具</h2><p>心理测试 H5、情绪日记、树洞留言板 —— 全部自己 vibe 出来</p></div>
-    <div class="card"><h2>📚 书单推荐</h2><p>那些真正帮到过我的心理学书籍</p></div>
+    <a class="card" href="content.html"><span class="arrow">→</span><h2>🧠 心理解读</h2><p>最新视频精选 · 面向年轻人的原生家庭 / 焦虑内耗 / 情绪自救</p></a>
+    <a class="card" href="tools.html"><span class="arrow">→</span><h2>🛠 自制工具</h2><p>心理测试 H5、情绪日记、树洞留言板 —— 全部自己 vibe 出来</p></a>
+    <a class="card" href="books.html"><span class="arrow">→</span><h2>📚 书单推荐</h2><p>那些真正帮到过我的心理学书籍</p></a>
   </div>
   <footer>这是我的第一个网页 · 用 AI 生成 · <a href="#" id="date"></a></footer>
 <script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>书单推荐 · 落叶心理解剖室</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #0f1115; color: #e8e8ea;
+    min-height: 100vh; padding: 40px 20px; line-height: 1.8;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  .back { color: #7c9ef0; text-decoration: none; font-size: 14px; }
+  h1 { font-size: 24px; margin: 20px 0 6px; }
+  .sub { color: #9a9aa3; font-size: 14px; margin-bottom: 32px; }
+  .book {
+    background: #1a1d24; border: 1px solid #2a2d35; border-radius: 16px;
+    padding: 20px; margin-bottom: 16px; display: flex; gap: 16px; align-items: flex-start;
+  }
+  .cover {
+    width: 56px; height: 78px; flex-shrink: 0; border-radius: 6px;
+    background: linear-gradient(135deg, #2b2f3a, #3a3f4d);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+  }
+  .book h2 { font-size: 16px; }
+  .book .author { font-size: 12px; color: #6b6c75; margin-bottom: 6px; }
+  .book .comment { font-size: 14px; color: #b9b9c2; font-style: italic; }
+  .buy {
+    display: inline-block; margin-top: 10px; font-size: 13px;
+    color: #7c9ef0; text-decoration: none; border: 1px solid #2a3a55;
+    border-radius: 20px; padding: 3px 14px;
+  }
+  footer { margin-top: 40px; text-align: center; font-size: 12px; color: #55565e; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 返回主页</a>
+  <h1>📚 书单推荐</h1>
+  <p class="sub">每一本都真正帮到过我。少而真，不带货感。</p>
+
+  <!-- ⚠️ 内容维护说明：换书时改下面数组即可；开通带货后把 link: "#" 换成真实购买链接 -->
+  <div id="book-list"></div>
+
+  <footer>落叶心理解剖室 · 用 AI 把想法变成产品</footer>
+</div>
+<script>
+  // ==== 数据区：把占位换成你的真实书单（书名/作者/封面emoji/一句人设口吻短评）====
+  const books = [
+    { emoji: "📖", title: "【占位】书名 1", author: "作者 · 出版社", comment: "“这本书把我从内耗里捞了出来。”", link: "#" },
+    { emoji: "📗", title: "【占位】书名 2", author: "作者 · 出版社", comment: "“读完才明白，我和父母之间隔着的不是爱，是表达。”", link: "#" },
+    { emoji: "📘", title: "【占位】书名 3", author: "作者 · 出版社", comment: "“焦虑不是要消灭的，是要听懂的。”", link: "#" },
+    { emoji: "📙", title: "【占位】书名 4", author: "作者 · 出版社", comment: "“适合凌晨两点睡不着的你。”", link: "#" },
+  ];
+
+  document.getElementById('book-list').innerHTML = books.map(b => `
+    <div class="book">
+      <div class="cover">${b.emoji}</div>
+      <div>
+        <h2>${b.title}</h2>
+        <div class="author">${b.author}</div>
+        <div class="comment">${b.comment}</div>
+        ${b.link !== "#" ? `<a class="buy" href="${b.link}" target="_blank" rel="noopener">看看这本书 →</a>` : `<span class="buy" style="color:#55565e;border-color:#2a2d35">链接筹备中</span>`}
+      </div>
+    </div>`).join('');
+</script>
+</body>
+</html>

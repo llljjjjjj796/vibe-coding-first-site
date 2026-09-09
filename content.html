@@ -49,14 +49,16 @@
   <footer>落叶心理解剖室 · 用 AI 把想法变成产品</footer>
 </div>
 <script>
-  // ==== 数据区：把这三个占位换成你的真实视频（标题 / 一句话钩子 / 分类标签）====
+  // ==== 数据区：2026-09-06 从抖音主页实抓（账号：落叶的情感解剖室）====
   const videos = [
-    { title: "【占位】视频标题 1 —— 换成你的真实标题", hook: "一句话钩子：为什么你总在深夜 emo？", tag: "焦虑内耗" },
-    { title: "【占位】视频标题 2 —— 换成你的真实标题", hook: "一句话钩子：原生家庭欠你的，你可以自己补上", tag: "原生家庭" },
-    { title: "【占位】视频标题 3 —— 换成你的真实标题", hook: "一句话钩子：情绪不是敌人，是没拆的信", tag: "情绪自救" },
+    { title: "你越证明自己正常，就越不正常", hook: "你有没有过「装作没事」的一天？", tag: "内耗" },
+    { title: "你反复解释的样子，就是交出主导权的样子", hook: "你上一次拼命解释，是为了什么？", tag: "讨好型人格" },
+    { title: "你对自己，比谁都狠", hook: "你会对最好的朋友说「你真没用」吗？不会。可你昨天，对自己说了三遍。", tag: "自我对话" },
+    { title: "情绪稳定，不是没情绪", hook: "你憋着火说「没事」，那不是稳定，是堰塞湖。", tag: "情绪管理" },
+    { title: "内耗，是你一个人演了三场戏", hook: "别人骂你一句，你记一天。可你骂自己，是全天候直播。", tag: "内耗" },
   ];
-  // ==== 你的抖音主页链接（登录抖音 → 我的主页 → 分享 → 复制链接）====
-  const douyinHome = "#"; // ← 换成真实链接
+  // ==== 你的抖音主页链接（公开主页，已验证可访问）====
+  const douyinHome = "https://www.douyin.com/user/MS4wLjABAAAAVKv8S8vHfge3JNfmmGx2yXOHlICvWrsRWB_Ze6WxnEQ";
 
   const list = document.getElementById('video-list');
   list.innerHTML = videos.map(v =>

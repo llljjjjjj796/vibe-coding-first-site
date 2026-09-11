@@ -17,8 +17,16 @@
   .sub { color: #9a9aa3; font-size: 14px; margin-bottom: 32px; }
   .video {
     background: #1a1d24; border: 1px solid #2a2d35; border-radius: 16px;
-    padding: 22px 20px; margin-bottom: 16px;
+    padding: 22px 20px; margin-bottom: 16px; display: block;
+    text-decoration: none; color: inherit; position: relative;
+    transition: transform .2s, border-color .2s;
   }
+  .video:hover { transform: translateY(-3px); border-color: #7c6cf0; }
+  .video .go {
+    position: absolute; top: 20px; right: 18px;
+    font-size: 12px; color: #55565e; transition: color .2s;
+  }
+  .video:hover .go { color: #7c6cf0; }
   .video h2 { font-size: 17px; margin-bottom: 8px; }
   .video p { font-size: 14px; color: #9a9aa3; }
   .video .tag {
@@ -61,9 +69,14 @@
   const douyinHome = "https://www.douyin.com/user/MS4wLjABAAAAVKv8S8vHfge3JNfmmGx2yXOHlICvWrsRWB_Ze6WxnEQ";
 
   const list = document.getElementById('video-list');
-  list.innerHTML = videos.map(v =>
-    `<div class="video"><span class="tag">${v.tag}</span><h2>${v.title}</h2><p>${v.hook}</p></div>`
-  ).join('');
+  // 每条视频的链接；link 为 "#" 时跳转到抖音主页（等视频链接补齐后逐条替换）
+  list.innerHTML = videos.map(v => {
+    const url = (v.link && v.link !== "#") ? v.link : douyinHome;
+    return `<a class="video" href="${url}" target="_blank" rel="noopener">
+      <span class="go">去抖音 ↗</span>
+      <span class="tag">${v.tag}</span><h2>${v.title}</h2><p>${v.hook}</p>
+    </a>`;
+  }).join('');
   if (douyinHome !== "#") document.getElementById('douyin-link').href = douyinHome;
 </script>
 </body>
